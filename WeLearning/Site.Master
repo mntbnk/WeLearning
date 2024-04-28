@@ -13,6 +13,7 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 </head>
 <body>
@@ -58,8 +59,15 @@
                             </asp:RoleGroup>
                              <asp:RoleGroup Roles="Students">
                                 <ContentTemplate>
-                                   <a class="nav-link" runat="server" href="~/Students/ViewCourses.aspx">View Courses</a>
-                              </ContentTemplate>
+                <ul style="padding-left: 0; margin-left: 0; list-style-type: none;">
+                    <li style="display: inline-block; margin-right: 5px;">
+                        <a class="nav-link" runat="server" href="~/Students/ViewCourses.aspx">View Courses</a>
+                    </li>
+                    <li style="display: inline-block;">
+                        <a class="nav-link" runat="server" href="~/Students/Discussion.aspx">Discussion</a>
+                    </li>
+                </ul>
+            </ContentTemplate>
                             </asp:RoleGroup>
                         </RoleGroups>
                         </asp:LoginView>

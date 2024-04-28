@@ -12,8 +12,8 @@
         <div class="row">
     <asp:Label runat="server" AssociatedControlID="txtfullname" CssClass="col-md-2 col-form-label">Please Select Type</asp:Label>
        <div class="col-md-10">
-           <asp:RadioButton ID="RadInstructor" runat="server" Text="Instructor" GroupName="group" />
-           <asp:RadioButton ID="RadStudent" runat="server" Text="Student" GroupName="group" />
+           <asp:RadioButton ID="RadInstructor" runat="server" Text="Instructor" GroupName="group" style="margin-right: 10px;" />
+           <asp:RadioButton ID="RadStudent" runat="server" Text="Student" GroupName="group" style="margin-right: 10px;" />
         </div>
         </div>
         <div class="row">
@@ -50,6 +50,7 @@
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
             </div>
         </div>
+        <br />
         <div class="row">
             <div class="offset-md-2 col-md-10">
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-outline-dark" />

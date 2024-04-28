@@ -383,6 +383,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="Students\CourseDetails.aspx" />
+    <Content Include="Students\Discussion.aspx" />
     <Content Include="Students\ViewCourses.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -561,6 +562,13 @@
     </Compile>
     <Compile Include="Students\CourseDetails.aspx.designer.cs">
       <DependentUpon>CourseDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Students\Discussion.aspx.cs">
+      <DependentUpon>Discussion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Students\Discussion.aspx.designer.cs">
+      <DependentUpon>Discussion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Students\ViewCourses.aspx.cs">
       <DependentUpon>ViewCourses.aspx</DependentUpon>
