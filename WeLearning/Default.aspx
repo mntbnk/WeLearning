@@ -2,42 +2,49 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <main>
-        <section class="row" aria-labelledby="aspnetTitle">
-            <h1 id="welearningTitle">WeLearning</h1>
-            <p class="lead">Unlock Your Potential: Learning Unbound, Wherever You Are.</p>
-            <p><a href="http://www.asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-        </section>
+<main>
+    <section class="jumbotron text-center bg-primary text-white">
+        <h1 id="welearningTitle">WeLearning</h1>
+        <p class="lead">Unlock Your Potential: Learning Unbound, Wherever You Are.</p>
+    </section>
 
+    <div class="container mt-5">
         <div class="row">
-            <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-                <h2 id="gettingStartedTitle">Get started!</h2>
-                <p>
-                    Register with us and have access to over 200 tutorials!
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="librariesTitle">
-                <h2 id="librariesTitle">Increase your knowledge.</h2>
-                <p>
-                    WeLearning expands horizons, fostering continuous knowledge growth through accessible, interactive platforms.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="hostingTitle">
-                <h2 id="hostingTitle">Experience Professional Tutors.</h2>
-                <p>
-                    Our amazing tutors inspire, empower, and ignite a passion for learning, guiding students towards excellence and enlightenment.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-                </p>
-            </section>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-body">
+                        <h2 id="gettingStartedTitle" class="card-title">Get Started!</h2>
+                        <p class="card-text">
+                            Register with us and gain access to over 200 tutorials!
+                        </p>
+                        <a class="btn btn-primary" href="/Account/Register">Register Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-body">
+                        <h2 id="librariesTitle" class="card-title">Expand Your Knowledge</h2>
+                        <p class="card-text">
+                            WeLearning fosters continuous knowledge growth through accessible, interactive platforms.
+                        </p>
+                        <!-- Interactive element like a button or link can be added here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-body">
+                        <h2 id="hostingTitle" class="card-title">Professional Tutors</h2>
+                        <p class="card-text">
+                            Our tutors inspire and empower, guiding students towards excellence.
+                        </p>
+                        <!-- Interactive element like a button or link can be added here if needed -->
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
+    </div>
+</main>
 
 </asp:Content>
