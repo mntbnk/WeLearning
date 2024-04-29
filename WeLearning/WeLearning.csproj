@@ -314,6 +314,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Instructors\AddCourses.aspx" />
+    <Content Include="Instructors\StudentInfo.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -538,6 +539,13 @@
     </Compile>
     <Compile Include="Instructors\AddCourses.aspx.designer.cs">
       <DependentUpon>AddCourses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instructors\StudentInfo.aspx.cs">
+      <DependentUpon>StudentInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instructors\StudentInfo.aspx.designer.cs">
+      <DependentUpon>StudentInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

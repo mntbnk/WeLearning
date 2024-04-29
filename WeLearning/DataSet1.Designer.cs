@@ -4416,7 +4416,7 @@ namespace WeLearning.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        student_id, student_name, student_email\r\nFROM            tbl_Studen" +
@@ -4424,20 +4424,24 @@ namespace WeLearning.DataSet1TableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT student_id FROM tbl_Students WHERE student_email=@email";
+            this._commandCollection[1].CommandText = "SELECT         student_name, student_email\r\nFROM            tbl_Students";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT student_id FROM tbl_Students WHERE student_email=@email";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             global::Microsoft.Data.SqlClient.SqlParameter param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@email";
             param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "student_email";
-            this._commandCollection[1].Parameters.Add(param);
-            this._commandCollection[2] = new global::Microsoft.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        student_id, student_name, student_email\r\nFROM            tbl_Studen" +
+            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        student_id, student_name, student_email\r\nFROM            tbl_Studen" +
                 "ts\r\nWHERE student_id = @studentid";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@studentid";
             param.DbType = global::System.Data.DbType.Int32;
@@ -4445,26 +4449,26 @@ namespace WeLearning.DataSet1TableAdapters {
             param.Size = 4;
             param.IsNullable = true;
             param.SourceColumn = "student_id";
-            this._commandCollection[2].Parameters.Add(param);
-            this._commandCollection[3] = new global::Microsoft.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "UPDATE tbl_Students\r\nSET student_name = @studentname, student_email = @studentema" +
+            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "UPDATE tbl_Students\r\nSET student_name = @studentname, student_email = @studentema" +
                 "il\r\nWHERE student_id = @studentid";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@studentname";
             param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "student_name";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4].Parameters.Add(param);
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@studentemail";
             param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "student_email";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4].Parameters.Add(param);
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@studentid";
             param.DbType = global::System.Data.DbType.Int32;
@@ -4473,7 +4477,7 @@ namespace WeLearning.DataSet1TableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "student_id";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4491,8 +4495,19 @@ namespace WeLearning.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.tbl_StudentsDataTable GetStudentDetails() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            DataSet1.tbl_StudentsDataTable dataTable = new DataSet1.tbl_StudentsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataSet1.tbl_StudentsDataTable GetStudentProfileByID(int studentid) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(studentid));
             DataSet1.tbl_StudentsDataTable dataTable = new DataSet1.tbl_StudentsDataTable();
             this.Adapter.Fill(dataTable);
@@ -4621,7 +4636,7 @@ namespace WeLearning.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> GetStudentID(string email) {
-            global::Microsoft.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::Microsoft.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((email == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4656,7 +4671,7 @@ namespace WeLearning.DataSet1TableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateStudentProfile(string studentname, string studentemail, int studentid) {
-            global::Microsoft.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::Microsoft.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((studentname == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }

@@ -27,7 +27,7 @@ namespace WeLearning.Account
                     tbl_InstructorsTableAdapter instructor = new tbl_InstructorsTableAdapter();
                     Session["instructorID"] = instructor.GetInstructorID(Email.Text);
                     FormsAuthentication.SetAuthCookie(Email.Text, true);
-                    Response.Redirect("~/Default.aspx");
+                    Response.Redirect("~/Instructors/AddCourses.aspx");
 
                 }
                 else if(Roles.IsUserInRole(Email.Text,"Students"))
@@ -35,7 +35,7 @@ namespace WeLearning.Account
                     tbl_StudentsTableAdapter student = new tbl_StudentsTableAdapter();
                     Session["studentID"] = student.GetStudentID(Email.Text);
                     FormsAuthentication.SetAuthCookie(Email.Text, true);
-                    Response.Redirect("~/Default.aspx");
+                    Response.Redirect("~/Students/ViewCourses.aspx");
                 }
 
 

@@ -48,14 +48,21 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/About">About</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li> 
                         <li>
                     <asp:LoginView ID="LoginView1" runat="server">
                         <RoleGroups>
                             <asp:RoleGroup Roles="Instructors">
-                                <ContentTemplate>
-                                   <a class="nav-link" runat="server" href="~/Instructors/AddCourses.aspx">Add Courses</a>
-                                </ContentTemplate>
+                                                    <ContentTemplate>
+                            <ul style="padding-left: 0; margin-left: 0; list-style-type: none;">
+                                 <li style="display: inline-block; margin-right: 5px;">
+                         <a class="nav-link" runat="server" href="~/Instructors/AddCourses.aspx">Add Courses</a>
+                                  </li>
+                             <li style="display: inline-block;">
+                              <a class="nav-link" runat="server" href="~/Instructors/StudentInfo.aspx">Student Info</a>
+                              </li>
+                          </ul>
+                           </ContentTemplate>
                             </asp:RoleGroup>
                              <asp:RoleGroup Roles="Students">
                                 <ContentTemplate>
