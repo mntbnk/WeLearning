@@ -20,26 +20,34 @@ namespace WeLearning.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
-          if (Membership.ValidateUser(Email.Text,Password.Text)) 
+            if (Membership.ValidateUser(Email.Text, Password.Text))
             {
+                string redirectUrl = "";
                 if (Roles.IsUserInRole(Email.Text, "Instructors"))
                 {
                     tbl_InstructorsTableAdapter instructor = new tbl_InstructorsTableAdapter();
                     Session["instructorID"] = instructor.GetInstructorID(Email.Text);
                     FormsAuthentication.SetAuthCookie(Email.Text, true);
-                    Response.Redirect("~/Instructors/AddCourses.aspx");
-
+                    redirectUrl = "~/Instructors/AddCourses.aspx";
                 }
-                else if(Roles.IsUserInRole(Email.Text,"Students"))
+                else if (Roles.IsUserInRole(Email.Text, "Students"))
                 {
                     tbl_StudentsTableAdapter student = new tbl_StudentsTableAdapter();
                     Session["studentID"] = student.GetStudentID(Email.Text);
                     FormsAuthentication.SetAuthCookie(Email.Text, true);
-                    Response.Redirect("~/Students/ViewCourses.aspx");
+                    redirectUrl = "~/Students/ViewCourses.aspx";
                 }
 
-
+                // Use JavaScript for redirection after the alert
+                string script = $"alert('Login successful!'); window.location='{ResolveClientUrl(redirectUrl)}';";
+                ClientScript.RegisterStartupScript(this.GetType(), "loginSuccess", script, true);
+            }
+            else
+            {
+                // Unsuccessful login message
+                ClientScript.RegisterStartupScript(this.GetType(), "loginError", "alert('Login unsuccessful. Please check your username and password.');", true);
             }
         }
+
     }
 }
