@@ -11,8 +11,7 @@ namespace WeLearning
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Membership.DeleteUser("avi.ajay6@gmail.com");
-            //Membership.DeleteUser("av@gmail.com");
+
         }
     }
 }

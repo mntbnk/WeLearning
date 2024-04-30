@@ -39,14 +39,12 @@ namespace WeLearning.Account
 
             if (isUserCreated)
             {
-                // Use JavaScript for the alert and redirection
                 string script = $"alert('Registration successful as {role}!'); window.location='{ResolveClientUrl("~/Default.aspx")}';";
                 ClientScript.RegisterStartupScript(this.GetType(), "registrationSuccess", script, true);
             }
             else
             {
-                // Handle the case where user creation failed
-                // You can display an error message or take other appropriate actions
+
             }
         }
     }

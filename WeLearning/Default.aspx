@@ -28,7 +28,6 @@
                         <p class="card-text">
                             WeLearning fosters continuous knowledge growth through accessible, interactive platforms.
                         </p>
-                        <!-- Interactive element like a button or link can be added here if needed -->
                     </div>
                 </div>
             </div>
@@ -39,7 +38,6 @@
                         <p class="card-text">
                             Our tutors inspire and empower, guiding students towards excellence.
                         </p>
-                        <!-- Interactive element like a button or link can be added here if needed -->
                     </div>
                 </div>
             </div>

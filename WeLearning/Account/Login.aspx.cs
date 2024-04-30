@@ -38,13 +38,11 @@ namespace WeLearning.Account
                     redirectUrl = "~/Students/ViewCourses.aspx";
                 }
 
-                // Use JavaScript for redirection after the alert
                 string script = $"alert('Login successful!'); window.location='{ResolveClientUrl(redirectUrl)}';";
                 ClientScript.RegisterStartupScript(this.GetType(), "loginSuccess", script, true);
             }
             else
             {
-                // Unsuccessful login message
                 ClientScript.RegisterStartupScript(this.GetType(), "loginError", "alert('Login unsuccessful. Please check your username and password.');", true);
             }
         }
