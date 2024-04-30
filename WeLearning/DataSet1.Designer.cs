@@ -1682,8 +1682,6 @@ namespace WeLearning {
             
             private global::System.Data.DataColumn columnoption_c;
             
-            private global::System.Data.DataColumn columnentered_answer;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tbl_AnswersDataTable() {
@@ -1767,14 +1765,6 @@ namespace WeLearning {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn entered_answerColumn {
-                get {
-                    return this.columnentered_answer;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1810,7 +1800,7 @@ namespace WeLearning {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tbl_AnswersRow Addtbl_AnswersRow(int question_id, string correct_ans, string option_a, string option_b, string option_c, string entered_answer) {
+            public tbl_AnswersRow Addtbl_AnswersRow(int question_id, string correct_ans, string option_a, string option_b, string option_c) {
                 tbl_AnswersRow rowtbl_AnswersRow = ((tbl_AnswersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1818,8 +1808,7 @@ namespace WeLearning {
                         correct_ans,
                         option_a,
                         option_b,
-                        option_c,
-                        entered_answer};
+                        option_c};
                 rowtbl_AnswersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbl_AnswersRow);
                 return rowtbl_AnswersRow;
@@ -1855,7 +1844,6 @@ namespace WeLearning {
                 this.columnoption_a = base.Columns["option_a"];
                 this.columnoption_b = base.Columns["option_b"];
                 this.columnoption_c = base.Columns["option_c"];
-                this.columnentered_answer = base.Columns["entered_answer"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1873,8 +1861,6 @@ namespace WeLearning {
                 base.Columns.Add(this.columnoption_b);
                 this.columnoption_c = new global::System.Data.DataColumn("option_c", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnoption_c);
-                this.columnentered_answer = new global::System.Data.DataColumn("entered_answer", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnentered_answer);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnanswer_id}, true));
                 this.columnanswer_id.AutoIncrement = true;
@@ -1887,7 +1873,6 @@ namespace WeLearning {
                 this.columnoption_a.MaxLength = 2147483647;
                 this.columnoption_b.MaxLength = 2147483647;
                 this.columnoption_c.MaxLength = 2147483647;
-                this.columnentered_answer.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3128,22 +3113,6 @@ namespace WeLearning {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string entered_answer {
-                get {
-                    try {
-                        return ((string)(this[this.tabletbl_Answers.entered_answerColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'entered_answer\' in table \'tbl_Answers\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletbl_Answers.entered_answerColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isquestion_idNull() {
                 return this.IsNull(this.tabletbl_Answers.question_idColumn);
             }
@@ -3200,18 +3169,6 @@ namespace WeLearning {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setoption_cNull() {
                 this[this.tabletbl_Answers.option_cColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isentered_answerNull() {
-                return this.IsNull(this.tabletbl_Answers.entered_answerColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setentered_answerNull() {
-                this[this.tabletbl_Answers.entered_answerColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5602,7 +5559,6 @@ namespace WeLearning.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("option_a", "option_a");
             tableMapping.ColumnMappings.Add("option_b", "option_b");
             tableMapping.ColumnMappings.Add("option_c", "option_c");
-            tableMapping.ColumnMappings.Add("entered_answer", "entered_answer");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -5619,8 +5575,8 @@ namespace WeLearning.DataSet1TableAdapters {
             this._adapter.InsertCommand = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [tbl_Answers] ([question_id], [correct_ans], [option_a], [option_b], " +
-                "[option_c], [entered_answer]) VALUES (@question_id, @correct_ans, @option_a, @op" +
-                "tion_b, @option_c, @entered_answer)";
+                "[option_c]) VALUES (@question_id, @correct_ans, @option_a, @option_b, @option_c)" +
+                "";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@question_id";
@@ -5653,17 +5609,11 @@ namespace WeLearning.DataSet1TableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "option_c";
             this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Microsoft.Data.SqlClient.SqlParameter();
-            param.ParameterName = "@entered_answer";
-            param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "entered_answer";
-            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [tbl_Answers] SET [question_id] = @question_id, [correct_ans] = @correct_a" +
-                "ns, [option_a] = @option_a, [option_b] = @option_b, [option_c] = @option_c, [ent" +
-                "ered_answer] = @entered_answer WHERE (([answer_id] = @Original_answer_id))";
+                "ns, [option_a] = @option_a, [option_b] = @option_b, [option_c] = @option_c WHERE" +
+                " (([answer_id] = @Original_answer_id))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@question_id";
@@ -5697,12 +5647,6 @@ namespace WeLearning.DataSet1TableAdapters {
             param.SourceColumn = "option_c";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
-            param.ParameterName = "@entered_answer";
-            param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "entered_answer";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@Original_answer_id";
             param.DbType = global::System.Data.DbType.Int32;
             param.SqlDbType = global::System.Data.SqlDbType.Int;
@@ -5725,13 +5669,13 @@ namespace WeLearning.DataSet1TableAdapters {
             this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        answer_id, question_id, correct_ans, option_a, option_b, option_c, " +
-                "entered_answer\r\nFROM            tbl_Answers";
+            this._commandCollection[0].CommandText = "SELECT        answer_id, question_id, correct_ans, option_a, option_b, option_c\r\n" +
+                "FROM            tbl_Answers";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT answer_id, correct_ans, entered_answer, option_a, option_b, option_c, ques" +
-                "tion_id FROM tbl_Answers WHERE (question_id = @questionid)";
+            this._commandCollection[1].CommandText = "SELECT answer_id, correct_ans, option_a, option_b, option_c, question_id FROM tbl" +
+                "_Answers WHERE (question_id = @questionid)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Microsoft.Data.SqlClient.SqlParameter param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@questionid";
@@ -5826,7 +5770,7 @@ namespace WeLearning.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> question_id, string correct_ans, string option_a, string option_b, string option_c, string entered_answer) {
+        public virtual int Insert(global::System.Nullable<int> question_id, string correct_ans, string option_a, string option_b, string option_c) {
             if ((question_id.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(question_id.Value));
             }
@@ -5857,12 +5801,6 @@ namespace WeLearning.DataSet1TableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(option_c));
             }
-            if ((entered_answer == null)) {
-                throw new global::System.ArgumentNullException("entered_answer");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(entered_answer));
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5883,7 +5821,7 @@ namespace WeLearning.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> question_id, string correct_ans, string option_a, string option_b, string option_c, string entered_answer, int Original_answer_id) {
+        public virtual int Update(global::System.Nullable<int> question_id, string correct_ans, string option_a, string option_b, string option_c, int Original_answer_id) {
             if ((question_id.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(question_id.Value));
             }
@@ -5914,13 +5852,7 @@ namespace WeLearning.DataSet1TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(option_c));
             }
-            if ((entered_answer == null)) {
-                throw new global::System.ArgumentNullException("entered_answer");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(entered_answer));
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_answer_id));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_answer_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

@@ -153,6 +153,7 @@
             <asp:Parameter Name="option_a" Type="String" />
             <asp:Parameter Name="option_b" Type="String" />
             <asp:Parameter Name="option_c" Type="String" />
+            <asp:Parameter Name="entered_answer" Type="String" />
             <asp:Parameter Name="Original_answer_id" Type="Int32" />
         </UpdateParameters>
     </asp:ObjectDataSource>
