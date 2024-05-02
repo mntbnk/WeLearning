@@ -91,6 +91,7 @@
                         <LoggedInTemplate>
                             <ul class="navbar-nav navbar-right">                               
                                 <li><a runat="server" class="nav-link" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a runat="server" class="nav-link" href="EditProfile.aspx">Update Profile</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" CssClass="nav-link" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
